@@ -11,35 +11,35 @@ var wms_layers = [];
                 url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
             })
         });
-var format_Highways_1 = new ol.format.GeoJSON();
-var features_Highways_1 = format_Highways_1.readFeatures(json_Highways_1, 
+var format_UrbanRoutes_1 = new ol.format.GeoJSON();
+var features_UrbanRoutes_1 = format_UrbanRoutes_1.readFeatures(json_UrbanRoutes_1, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Highways_1 = new ol.source.Vector({
+var jsonSource_UrbanRoutes_1 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_Highways_1.addFeatures(features_Highways_1);
-var lyr_Highways_1 = new ol.layer.Vector({
+jsonSource_UrbanRoutes_1.addFeatures(features_UrbanRoutes_1);
+var lyr_UrbanRoutes_1 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_Highways_1, 
-                style: style_Highways_1,
-                popuplayertitle: 'Highways',
+                source:jsonSource_UrbanRoutes_1, 
+                style: style_UrbanRoutes_1,
+                popuplayertitle: 'Urban Routes',
                 interactive: true,
-                title: '<img src="styles/legend/Highways_1.png" /> Highways'
+                title: '<img src="styles/legend/UrbanRoutes_1.png" /> Urban Routes'
             });
-var format_Trails_2 = new ol.format.GeoJSON();
-var features_Trails_2 = format_Trails_2.readFeatures(json_Trails_2, 
+var format_RailandHikingRoutes_2 = new ol.format.GeoJSON();
+var features_RailandHikingRoutes_2 = format_RailandHikingRoutes_2.readFeatures(json_RailandHikingRoutes_2, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Trails_2 = new ol.source.Vector({
+var jsonSource_RailandHikingRoutes_2 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_Trails_2.addFeatures(features_Trails_2);
-var lyr_Trails_2 = new ol.layer.Vector({
+jsonSource_RailandHikingRoutes_2.addFeatures(features_RailandHikingRoutes_2);
+var lyr_RailandHikingRoutes_2 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_Trails_2, 
-                style: style_Trails_2,
-                popuplayertitle: 'Trails',
+                source:jsonSource_RailandHikingRoutes_2, 
+                style: style_RailandHikingRoutes_2,
+                popuplayertitle: 'Rail and Hiking Routes',
                 interactive: true,
-                title: '<img src="styles/legend/Trails_2.png" /> Trails'
+                title: '<img src="styles/legend/RailandHikingRoutes_2.png" /> Rail and Hiking Routes'
             });
 var format_TheoreticalRoutes_3 = new ol.format.GeoJSON();
 var features_TheoreticalRoutes_3 = format_TheoreticalRoutes_3.readFeatures(json_TheoreticalRoutes_3, 
@@ -117,29 +117,29 @@ var lyr_HikingDestinations_7 = new ol.layer.Vector({
                 title: '<img src="styles/legend/HikingDestinations_7.png" /> Hiking Destinations'
             });
 
-lyr_OpenStreetMap_0.setVisible(true);lyr_Highways_1.setVisible(true);lyr_Trails_2.setVisible(true);lyr_TheoreticalRoutes_3.setVisible(true);lyr_Burgers_4.setVisible(true);lyr_MoreFoods_5.setVisible(true);lyr_Parking_6.setVisible(true);lyr_HikingDestinations_7.setVisible(true);
-var layersList = [lyr_OpenStreetMap_0,lyr_Highways_1,lyr_Trails_2,lyr_TheoreticalRoutes_3,lyr_Burgers_4,lyr_MoreFoods_5,lyr_Parking_6,lyr_HikingDestinations_7];
-lyr_Highways_1.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'Section': 'Section', 'layer': 'layer', 'path': 'path', });
-lyr_Trails_2.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'Section': 'Section', });
+lyr_OpenStreetMap_0.setVisible(true);lyr_UrbanRoutes_1.setVisible(true);lyr_RailandHikingRoutes_2.setVisible(true);lyr_TheoreticalRoutes_3.setVisible(true);lyr_Burgers_4.setVisible(true);lyr_MoreFoods_5.setVisible(true);lyr_Parking_6.setVisible(true);lyr_HikingDestinations_7.setVisible(true);
+var layersList = [lyr_OpenStreetMap_0,lyr_UrbanRoutes_1,lyr_RailandHikingRoutes_2,lyr_TheoreticalRoutes_3,lyr_Burgers_4,lyr_MoreFoods_5,lyr_Parking_6,lyr_HikingDestinations_7];
+lyr_UrbanRoutes_1.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'Section': 'Section', 'layer': 'layer', 'path': 'path', });
+lyr_RailandHikingRoutes_2.set('fieldAliases', {'fid': 'fid', 'id': 'id', 'Section': 'Section', });
 lyr_TheoreticalRoutes_3.set('fieldAliases', {'id': 'id', 'Name': 'Name', });
 lyr_Burgers_4.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'Address': 'Address', 'Price (~$)': 'Price (~$)', });
 lyr_MoreFoods_5.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'Address': 'Address', 'Price (~$)': 'Price (~$)', 'Food': 'Food', });
 lyr_Parking_6.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'Size': 'Size', });
 lyr_HikingDestinations_7.set('fieldAliases', {'id': 'id', 'Name': 'Name', 'Difficulty': 'Difficulty', });
-lyr_Highways_1.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'Section': 'TextEdit', 'layer': 'TextEdit', 'path': 'TextEdit', });
-lyr_Trails_2.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'Section': 'TextEdit', });
+lyr_UrbanRoutes_1.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'Section': 'TextEdit', 'layer': 'TextEdit', 'path': 'TextEdit', });
+lyr_RailandHikingRoutes_2.set('fieldImages', {'fid': 'TextEdit', 'id': 'TextEdit', 'Section': 'TextEdit', });
 lyr_TheoreticalRoutes_3.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', });
 lyr_Burgers_4.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'Address': 'TextEdit', 'Price (~$)': 'TextEdit', });
 lyr_MoreFoods_5.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'Address': 'TextEdit', 'Price (~$)': 'TextEdit', 'Food': 'TextEdit', });
 lyr_Parking_6.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'Size': 'TextEdit', });
 lyr_HikingDestinations_7.set('fieldImages', {'id': 'TextEdit', 'Name': 'TextEdit', 'Difficulty': 'TextEdit', });
-lyr_Highways_1.set('fieldLabels', {'fid': 'no label', 'id': 'no label', 'Section': 'no label', 'layer': 'no label', 'path': 'no label', });
-lyr_Trails_2.set('fieldLabels', {'fid': 'no label', 'id': 'no label', 'Section': 'no label', });
-lyr_TheoreticalRoutes_3.set('fieldLabels', {'id': 'no label', 'Name': 'no label', });
-lyr_Burgers_4.set('fieldLabels', {'id': 'no label', 'Name': 'no label', 'Address': 'no label', 'Price (~$)': 'no label', });
-lyr_MoreFoods_5.set('fieldLabels', {'id': 'no label', 'Name': 'no label', 'Address': 'no label', 'Price (~$)': 'no label', 'Food': 'no label', });
-lyr_Parking_6.set('fieldLabels', {'id': 'no label', 'Name': 'no label', 'Size': 'no label', });
-lyr_HikingDestinations_7.set('fieldLabels', {'id': 'no label', 'Name': 'no label', 'Difficulty': 'no label', });
+lyr_UrbanRoutes_1.set('fieldLabels', {'fid': 'hidden field', 'id': 'hidden field', 'Section': 'inline label - always visible', 'layer': 'hidden field', 'path': 'hidden field', });
+lyr_RailandHikingRoutes_2.set('fieldLabels', {'fid': 'hidden field', 'id': 'hidden field', 'Section': 'inline label - always visible', });
+lyr_TheoreticalRoutes_3.set('fieldLabels', {'id': 'hidden field', 'Name': 'inline label - always visible', });
+lyr_Burgers_4.set('fieldLabels', {'id': 'hidden field', 'Name': 'inline label - always visible', 'Address': 'inline label - always visible', 'Price (~$)': 'inline label - always visible', });
+lyr_MoreFoods_5.set('fieldLabels', {'id': 'hidden field', 'Name': 'inline label - always visible', 'Address': 'inline label - always visible', 'Price (~$)': 'inline label - always visible', 'Food': 'inline label - always visible', });
+lyr_Parking_6.set('fieldLabels', {'id': 'hidden field', 'Name': 'inline label - always visible', 'Size': 'inline label - always visible', });
+lyr_HikingDestinations_7.set('fieldLabels', {'id': 'hidden field', 'Name': 'inline label - always visible', 'Difficulty': 'inline label - always visible', });
 lyr_HikingDestinations_7.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
